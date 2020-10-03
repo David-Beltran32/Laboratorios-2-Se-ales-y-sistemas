@@ -24,15 +24,15 @@ classdef Senal
         
         function obj = Seno(obj,F,A)
             t=0:2/(100*F):2/F;
-            obj.seno=[t ; A*sin(2*pi*F*t)];
+            obj.seno=[[-2/(100*F),t,(2/F)+(2/(100*F))] ; [0,A*sin(2*pi*F*t),0]];
         end
         function obj = Cuadra(obj,F,A)
             t=0:2/(100*F):2/F;
-            obj.seno=[t ; A*square(2*pi*F*t)];
+            obj.cua=[[-2/(100*F),t,(2/F)+(2/(100*F))] ; [0,A*square(2*pi*F*t),0]];
         end
         function obj = Trian(obj,F,A)
             t=0:2/(100*F):2/F;
-            obj.seno=[t ; A*sawtooth((2*pi*F*t)+(pi/2),0.5)];
+            obj.tri=[[-2/(100*F),t,(2/F)+(2/(100*F))] ; [0,A*sawtooth((2*pi*F*t)+(pi/2),0.5),0]];
         end
         
         function obj= Expo(obj,a,b,ta,tb)
@@ -56,7 +56,7 @@ classdef Senal
             y2= 0.825*t2-0.825*(ta+0.3*tq+(tb-ta)/100);
             y3= y2(length(y2))*ones(1,length(t3)); 
             y=[y1,y2,y3];
-            obj.ramp1=[t;y];
+            obj.ramp1=[[ta-(tb-ta)/100,t,tb+(tb-ta)/100];[0,y,0]];
         end
         
         function obj= Rampa2(obj,ta,tb)
@@ -72,7 +72,7 @@ classdef Senal
             y1= y2(1)*ones(1,length(t1));
             y3= zeros(1,length(t3)); 
             y=[y1,y2,y3];
-            obj.ramp2=[t;y];
+            obj.ramp2=[[ta-(tb-ta)/100,t,tb+(tb-ta)/100];[0,y,0]];
         end
         
         function obj= Rampa3(obj,ta,tb)
@@ -87,7 +87,7 @@ classdef Senal
             y2= y1(length(y1))*ones(1,length(t2));
             y3= -1.1*t3+1.1*tb;
             y=[y1,y2,y3];
-            obj.ramp3=[t;y];
+            obj.ramp3=[[ta-(tb-ta)/100,t,tb+(tb-ta)/100];[0,y,0]];
             
         end
         
