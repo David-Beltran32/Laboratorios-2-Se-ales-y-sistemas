@@ -425,7 +425,7 @@ classdef lab_exported < matlab.apps.AppBase
                             legend(app.axconvo);
                             pause(1);
                        else
-                           plot(app.axposicion, t1,y1, 'b-', 'DisplayName', "f(t)");
+                           plot(app.axposicion, t1,y1, 'b-', 'DisplayName', "f(tau)");
                            hold(app.axposicion, "on");
                            plot(app.axposicion, tani,h2, 'm-', 'DisplayName', "h(t-tau)");
                            hold(app.axposicion, "off");
@@ -589,13 +589,13 @@ classdef lab_exported < matlab.apps.AppBase
                     app.GraficarButton.Visible=true;
                     switch app.TipodeSealDropDown.Value
                         case "Seno"
-                            app.ecuacionLabel_xt.Text = "y[n]=A*Sen(2*ÿ*[n]/No)";
+                            app.ecuacionLabel_xt.Text = "y[n]=A*Sen(2pi n/No)";
                         case "Exponencial"
                             app.ecuacionLabel_xt.Text = "y[n]=A*exp(-b*n)";                            
                     end
                     switch app.TipodeSealDropDown_2.Value
                         case "Seno"
-                            app.ecuacionLabel_ht.Text = "y[n]=A*Sen(2*ÿ*[n]/No)";
+                            app.ecuacionLabel_ht.Text = "y[n]=A*Sen(2pi n/No)";
                         case "Exponencial"
                             app.ecuacionLabel_ht.Text = "y[n]=A*exp(-b*n)";                    
                     end
@@ -625,13 +625,13 @@ classdef lab_exported < matlab.apps.AppBase
                     app.GraficarButton.Visible=true;
                     switch app.TipodeSealDropDown.Value
                         case "Seno"
-                            app.ecuacionLabel_xt.Text = "y(t)=A*Sen(2*ÿt/T)";
+                            app.ecuacionLabel_xt.Text = "y(t)=A*Sen(2pi t/T)";
                         case "Exponencial"
                             app.ecuacionLabel_xt.Text = "y(t)=A*exp(-bt)";                            
                     end
                     switch app.TipodeSealDropDown_2.Value
                         case "Seno"
-                            app.ecuacionLabel_ht.Text = "y(t)=A*Sen(2*ÿt/T)";
+                            app.ecuacionLabel_ht.Text = "y(t)=A*Sen(2pi t/T)";
                         case "Exponencial"
                             app.ecuacionLabel_ht.Text = "y(t)=A*exp(-bt)";                    
                     end                   
