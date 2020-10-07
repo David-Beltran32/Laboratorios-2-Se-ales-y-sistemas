@@ -34,7 +34,7 @@ classdef Seno<Signal
             y_t = obj.amplitud*sin(2*pi*(tiempo - obj.lim_inf)/obj.periodo);
             % Se discretiza el tiempo.
             if obj.discreta == 0
-                tiempo = obj.lim_inf:length(y_t) - 1;                
+                tiempo = obj.lim_inf: obj.lim_inf + length(y_t) - 1;                
             end 
         end
     end

@@ -26,9 +26,9 @@ classdef Rampa1<Signal
                 (tiempo >= ta + 0.7*tq).*(0.4*m*tq*ones(1));
             
             if obj.discreta == 0
-                tiempo = ta:length(y_t) - 1;          
+                tiempo = ta: ta + length(y_t) - 1;          
             end
-        end         
+        end     
         
     end
 end

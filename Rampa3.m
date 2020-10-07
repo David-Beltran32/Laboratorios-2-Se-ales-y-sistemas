@@ -26,8 +26,8 @@ classdef Rampa3<Signal
                 (m*tb - m*(ta + 0.7*tq)) + (tiempo >= ta + 0.7*tq).*...
                 (-m*tiempo + m*tb);
             if obj.discreta == 0
-                tiempo = ta:length(y_t) - 1;              
+                tiempo = ta: ta + length(y_t) - 1;              
             end 
-        end         
+        end          
     end
 end

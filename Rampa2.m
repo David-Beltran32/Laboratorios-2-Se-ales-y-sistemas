@@ -11,7 +11,7 @@ classdef Rampa2<Signal
             %   Detailed explanation goes here
             obj = obj@Signal(lim_inf, lim_sup, h_t, discreta);
         end
-        
+
         function  [tiempo, y_t] = calcular(obj)
             ta = obj.lim_inf;
             tb = obj.lim_sup;
@@ -26,9 +26,9 @@ classdef Rampa2<Signal
                 (tiempo >= ta + 0.7*tq).*(0);
             
             if obj.discreta == 0
-                tiempo = ta:length(y_t) - 1;                
+                tiempo = ta: ta + length(y_t) - 1;                
             end
-        end         
+        end          
     end
 end
 

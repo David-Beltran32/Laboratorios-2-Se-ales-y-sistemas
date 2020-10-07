@@ -16,6 +16,7 @@ classdef Rectangular<Signal
             obj.amplitud = amplitud;
         end
         
+
         function  [tiempo, y_t] = calcular(obj)
             if obj.h_t == true   
                 obj.periodo = obj.lim_sup - obj.lim_inf;
@@ -33,12 +34,10 @@ classdef Rectangular<Signal
             
             end
             
-            y_t = obj.amplitud*square(2*pi*(tiempo - obj.lim_inf)/obj.periodo); 
-            
+            y_t = obj.amplitud*square(2*pi*(tiempo - obj.lim_inf)/obj.periodo);             
             if obj.discreta == 0
-                tiempo = obj.lim_inf:length(y_t) - 1;                
-            end 
-            
+                tiempo = obj.lim_inf: obj.lim_inf + length(y_t) - 1;                
+            end             
         end
     end
 end

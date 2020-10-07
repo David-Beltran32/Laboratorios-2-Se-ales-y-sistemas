@@ -36,10 +36,9 @@ classdef Triangular<Signal
                 obj.periodo + (pi/2),0.5);
             
             if obj.discreta == 0
-                tiempo = obj.lim_inf:length(y_t) - 1;                
-            end 
-            
-        end         
+                tiempo = obj.lim_inf: obj.lim_inf + length(y_t) - 1;                
+            end             
+        end       
     end
 end
 
