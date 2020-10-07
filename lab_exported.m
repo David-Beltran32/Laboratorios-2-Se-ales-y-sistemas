@@ -656,7 +656,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Lím. Inferior: ";
                     app.campo3_htLabel.Text = "Lím. Superior: ";
                     app.campo4_htLabel.Text = "";
-                    if app.DominiodelTiempoDropDown == "Discreta"
+                    if app.DominiodelTiempoDropDown.Value == "Discreta"
                         app.ecuacionLabel_ht.Text = "y[n]=A\sin{2\pi n/N_{o}";
                     else
                         app.ecuacionLabel_ht.Text = "y(t)=A\sin{2\pi t/T}";
@@ -671,11 +671,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Lím. Inferior: ";
                     app.campo3_htLabel.Text = "Lím. Superior: ";
                     app.campo4_htLabel.Text = "";
-                    if app.DominiodelTiempoDropDown == "Discreta"
-                        app.ecuacionLabel_ht.Text = "Señal Cuadrada";
-                    else
-                        app.ecuacionLabel_ht.Text = "Señal Cuadrada";
-                    end
+                    app.ecuacionLabel_ht.Text = "Señal Cuadrada";
                     app.ecuacionLabel_xt.Visible = true;
                     showCamposHT1(app, true, true);
                     showCamposHT2(app, true, false);
@@ -686,11 +682,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Lím. Inferior: ";
                     app.campo3_htLabel.Text = "Lím. Superior: ";
                     app.campo4_htLabel.Text = "";
-                    if app.DominiodelTiempoDropDown == "Discreta"
-                        app.ecuacionLabel_ht.Text = "Señal Triangular";
-                    else
-                        app.ecuacionLabel_ht.Text = "Señal Triangular";
-                    end
+                    app.ecuacionLabel_ht.Text = "Señal Triangular";
                     app.ecuacionLabel_xt.Visible = true;
                     showCamposHT1(app, true, true);
                     showCamposHT2(app, true, false);
@@ -701,7 +693,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Exponente (b): ";
                     app.campo3_htLabel.Text = "Lím. Inferior: ";
                     app.campo4_htLabel.Text = "Lím. Superior: ";
-                    if app.DominiodelTiempoDropDown == "Discreta"
+                    if app.DominiodelTiempoDropDown.Value == "Discreta"
                         app.ecuacionLabel_ht.Text = "y[n]=A*exp(-b*n)";
                     else
                         app.ecuacionLabel_ht.Text = "y(t)=A*exp(-b*t)";
@@ -716,11 +708,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Lím. Superior: ";
                     app.campo3_htLabel.Text = "";
                     app.campo4_htLabel.Text = "";
-                    if app.DominiodelTiempoDropDown == "Discreta"
-                        app.ecuacionLabel_ht.Text = "Señal Rampa 1";
-                    else
-                        app.ecuacionLabel_ht.Text = "Señal Rampa 1";
-                    end
+                    app.ecuacionLabel_ht.Text = "Señal Rampa 1";
                     app.ecuacionLabel_xt.Visible = true;
                     showCamposHT1(app, true, true);
                     showCamposHT2(app, false, false); 
@@ -731,11 +719,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Lím. Superior: ";
                     app.campo3_htLabel.Text = "";
                     app.campo4_htLabel.Text = "";
-                    if app.DominiodelTiempoDropDown == "Discreta"
-                        app.ecuacionLabel_ht.Text = "Señal Rampa 2";
-                    else
-                        app.ecuacionLabel_ht.Text = "Señal Rampa 2";
-                    end
+                    app.ecuacionLabel_ht.Text = "Señal Rampa 2";
                     app.ecuacionLabel_xt.Visible = true;
                     showCamposHT1(app, true, true);
                     showCamposHT2(app, false, false);   
@@ -746,11 +730,7 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo2_htLabel.Text = "Lím. Superior: ";
                     app.campo3_htLabel.Text = "";
                     app.campo4_htLabel.Text = "";
-                    if app.DominiodelTiempoDropDown == "Discreta"
-                        app.ecuacionLabel_ht.Text = "Señal Rampa 3";
-                    else
-                        app.ecuacionLabel_ht.Text = "Señal Rampa 3";
-                    end
+                    app.ecuacionLabel_ht.Text = "Señal Rampa 3";
                     app.ecuacionLabel_xt.Visible = true;
                     showCamposHT1(app, true, true);
                     showCamposHT2(app, false, false);   
