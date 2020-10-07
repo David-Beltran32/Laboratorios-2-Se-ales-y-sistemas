@@ -1,6 +1,6 @@
-classdef Triangular<Signal
-    %UNTITLED Summary of this class goes here
-    %   Detailed explanation goes here
+classdef Triangular < Signal
+    %Clase Triangular, contiene la información correspondiente a la señal
+    %triangular.
     
     properties
         periodo         % Frecuencia de la señal.
@@ -9,8 +9,8 @@ classdef Triangular<Signal
     
     methods
         function obj = Triangular(periodo, amplitud, lim_inf, lim_sup, h_t, discreta)
-            %UNTITLED Construct an instance of this class
-            %   Detailed explanation goes here
+            % Constructor de la clase Triangular.
+            % Se instancian las variables a utilizar.
             obj = obj@Signal(lim_inf, lim_sup, h_t, discreta);
             obj.periodo = periodo;
             obj.amplitud = amplitud;
@@ -30,11 +30,10 @@ classdef Triangular<Signal
                 if obj.discreta == 0
                     tiempo = 0: obj.periodo/20: obj.periodo;              
                 end 
-            end
-           
+            end           
             y_t = obj.amplitud*sawtooth(2*pi*(tiempo - obj.lim_inf)/...
                 obj.periodo + (pi/2),0.5);
-            
+            % Se construyen las 20 muestras con los datos originales.            
             if obj.discreta == 0
                 tiempo = obj.lim_inf: obj.lim_inf + length(y_t) - 1;                
             end             

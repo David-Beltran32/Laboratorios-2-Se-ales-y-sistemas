@@ -1,6 +1,6 @@
-classdef Rectangular<Signal
-    %UNTITLED Summary of this class goes here
-    %   Detailed explanation goes here
+classdef Rectangular < Signal
+    %Clase Rectangular, contiene la información correspondiente a la señal
+    %Rectangular.
     
     properties
         periodo         % Frecuencia de la señal.
@@ -9,8 +9,8 @@ classdef Rectangular<Signal
     
     methods
         function obj = Rectangular(periodo, amplitud, lim_inf, lim_sup, h_t, discreta)
-            %UNTITLED Construct an instance of this class
-            %   Detailed explanation goes here
+            % Constructor de la clase Rectangular.
+            % Se instancian las variables a utilizar.
             obj = obj@Signal(lim_inf, lim_sup, h_t, discreta);
             obj.periodo = periodo;
             obj.amplitud = amplitud;
@@ -32,9 +32,9 @@ classdef Rectangular<Signal
                     tiempo = 0: obj.periodo/20: obj.periodo;              
                 end 
             
-            end
-            
-            y_t = obj.amplitud*square(2*pi*(tiempo - obj.lim_inf)/obj.periodo);             
+            end            
+            y_t = obj.amplitud*square(2*pi*(tiempo - obj.lim_inf)/obj.periodo);
+            % Se construyen las 20 muestras con los datos originales.              
             if obj.discreta == 0
                 tiempo = obj.lim_inf: obj.lim_inf + length(y_t) - 1;                
             end             

@@ -1,4 +1,4 @@
-classdef Exponencial<Signal
+classdef Exponencial < Signal
     %Clase Exponencial, contiene la información correspondiente a la señal
     %exponencial.
     
@@ -18,11 +18,11 @@ classdef Exponencial<Signal
         
         function  [tiempo, y_t] = calcular(obj)
             tiempo = obj.lim_inf: 1e-03: obj.lim_sup;  
-            % Se discretiza el tiempo.
             if obj.discreta == 0
                 tiempo = obj.lim_inf:(obj.lim_sup-obj.lim_inf)/20 : obj.lim_sup;                
             end
             y_t = obj.amplitud*exp(-obj.exponente*(tiempo - obj.lim_inf));
+            % Se construyen las 20 muestras con los datos originales. 
             if obj.discreta == 0
                 tiempo = obj.lim_inf: obj.lim_inf + length(y_t) - 1;                
             end 
