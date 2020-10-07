@@ -462,7 +462,6 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo3_xtLabel.Text = "";
                     app.campo4_xtLabel.Text = "";
                     if app.DominiodelTiempoDropDown.Value == "Discreta"
-                        app.ecuacionLabel_xt.interpreter
                         app.ecuacionLabel_xt.Text = "y[n]=A\sin{2\pi n/N_{o}";
                     else
                         app.ecuacionLabel_xt.Text = "y(t)=A\sin{2\pi t/T}";
@@ -500,7 +499,6 @@ classdef lab_exported < matlab.apps.AppBase
                     app.campo3_xtLabel.Text = "Lím. Inferior: ";
                     app.campo4_xtLabel.Text = "Lím. Superior: ";
                     if app.DominiodelTiempoDropDown.Value == "Discreta"
-                        app.ecuacionLabel_xt.interpreter
                         app.ecuacionLabel_xt.Text = "y[n]=A*exp(-b*n)";
                     else
                         app.ecuacionLabel_xt.Text = "y(t)=A*exp(-b*t)";
